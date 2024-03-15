@@ -112,7 +112,7 @@ tokio::task::spawn(async move {
 });
 # let authority = url.authority().unwrap().clone();
 # let req = Request::builder()
-#     .uri(url)
+#     .uri(url.path())
 #     .header(hyper::header::HOST, authority.as_str())
 #     .body(Empty::<Bytes>::new())?;
 # let mut res = sender.send_request(req).await?;
